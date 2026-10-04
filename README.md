@@ -1,4 +1,4 @@
-# USARampMeterMap
+# USA Ramp Meter Map
 North American Ramp Meter Inventory
 
 The North American Ramp Meter Inventory is an open geospatial dataset of ramp-meter locations across the United States and the Toronto metropolitan area of Canada.
