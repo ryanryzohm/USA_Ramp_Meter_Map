@@ -1,68 +1,93 @@
-# USA Ramp Meter Map
-North American Ramp Meter Inventory
+# North American Ramp Meter Inventory
 
-The North American Ramp Meter Inventory is an open geospatial dataset of ramp-meter locations across the United States and the Toronto metropolitan area of Canada.
+The **North American Ramp Meter Inventory** is an open geospatial dataset of ramp-meter locations across the United States and the Toronto metropolitan area of Canada.
 
-The current dataset contains 5,351 individually mapped ramp-meter locations across dozens of metropolitan areas.
+**Version 1.0 contains 5,351 individually mapped ramp-meter locations** across dozens of metropolitan areas.
 
-The goal of this project is to create a freely available, centralized inventory of ramp-meter infrastructure that can be used for transportation research, visualization, comparison between metropolitan areas, and other projects.
+The goal of this project is to create a freely available, centralized inventory of ramp-meter infrastructure that can be used for transportation research, visualization, geographic comparison, and other applications.
 
-Created and maintained by Ryan Wang (@ryanryzohm).
+Created and maintained by **Ryan Wang ([@ryanryzohm](https://github.com/ryanryzohm))**.
 
-Map
+## Map
 
-The original dataset was created in Google My Maps, with individual markers placed at identified ramp-meter locations.
+The original inventory was created in **Google My Maps**, with individual markers placed at identified ramp-meter locations.
 
-The map includes systems ranging from very small pilot installations to large regional networks containing hundreds or more than one thousand ramp meters.
+The dataset includes systems ranging from small pilot installations with only a few meters to large regional networks containing hundreds or more than one thousand locations.
 
 Major concentrations include California and the Minneapolis–Saint Paul region, along with substantial systems in several other metropolitan areas.
 
-Data
+## Data
 
-The repository includes:
+This repository includes:
 
-CSV — 5,351 ramp-meter locations in a single table
+- **CSV** — 5,351 ramp-meter locations in a single table
+- **KML** — geographic data exported from the original Google My Maps project
 
-KML — geographic data exported from the original Google My Maps project
+Coordinates use **WGS 84 (EPSG:4326)**.
 
-Coordinates use WGS 84 (EPSG:4326).
+The CSV currently contains the following fields:
 
-The CSV currently includes:
+- `state_group` — regional/state grouping used in the original map
+- `X` — longitude
+- `Y` — latitude
+- `Z` — altitude
+- `Name` — ramp or location name
+- `description` — optional descriptive information
 
-state_group
+## Methodology
 
-X — longitude
+Ramp-meter systems were first identified using a combination of transportation-agency publications, DOT reports and studies, project announcements, news articles, web searches, and existing regional summaries.
 
-Y — latitude
+These sources were primarily used to determine **which metropolitan areas and freeway corridors were known to have ramp-metering systems**.
 
-Z — altitude
+The majority of individual ramp-meter locations in the dataset were then identified through **manual visual inspection of satellite imagery**.
 
-Name
+A common visual indicator was the transverse white stop line located across a freeway entrance ramp near the ramp-meter signal. Freeway corridors within known ramp-metering regions were manually scanned for these features.
 
-description
+When a location was unclear from satellite imagery alone, **Google Street View was used for additional visual verification**, including checking for ramp-meter signal heads, stop lines, signage, lane configuration, and other associated infrastructure.
 
-Methodology
+For smaller systems or newly installed projects, transportation-agency documents and news reports sometimes identified the specific ramps or corridors directly. For large systems containing hundreds of meters, manual satellite-image inspection was the primary method used to identify individual locations.
 
-Ramp-meter systems were initially identified using transportation-agency publications, project documents, news reports, web searches, and other publicly available information.
+The dataset therefore represents a manually assembled geospatial inventory combining:
 
-For smaller systems, published project information was often sufficient to identify specific installations.
+- transportation-agency reports and publications;
+- DOT studies and ramp-meter project documents;
+- installation announcements and news reports;
+- web-based research identifying known ramp-meter systems;
+- manual inspection of satellite imagery; and
+- street-level visual verification where needed.
 
-For larger systems, locations were identified using satellite imagery. Ramp meters can frequently be recognized by features such as the transverse stop line located on the entrance ramp. Street-level imagery was used when additional verification was necessary.
+The mapping process was conducted manually rather than through automated image recognition.
 
-The inventory was assembled manually from multiple sources, so errors, missing locations, historical installations, or changes in operating status may exist. Corrections, additions, and other contributions are welcome.
+## Coverage and Limitations
 
-License
+This dataset is intended to provide broad geographic coverage but should **not yet be interpreted as a guaranteed complete inventory of every ramp meter in North America**.
 
-The original dataset compilation and original metadata in this repository are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+Coverage varies between regions. Some metropolitan systems have been mapped extensively, while others may contain only known projects, pilots, or locations identified through available documentation.
 
-You are free to share, copy, redistribute, adapt, transform, and build upon this dataset, including for commercial purposes, provided appropriate credit is given.
+Possible limitations include:
 
-Preferred attribution:
+- missing installations;
+- historical or decommissioned ramp meters;
+- changes in operating status after a location was mapped;
+- ambiguous locations requiring further verification;
+- uneven coverage between metropolitan areas;
+- differences in the availability and age of satellite and street-level imagery.
 
-Ryan Wang / ryanryzohm — North American Ramp Meter Inventory
+Absence of a mapped ramp meter does not necessarily indicate that no ramp meter exists at that location.
 
-Third-party maps, imagery, source materials, trademarks, and other third-party content are not included under this license and remain subject to their respective owners' terms.
+Future versions of the dataset will include additional validation against transportation-agency inventories where authoritative point-level or corridor-level data are available.
 
-Suggested citation:
+Corrections, additions, supporting sources, and other contributions are welcome.
 
-Wang, Ryan. North American Ramp Meter Inventory. Version 1.0, 2026. GitHub: ryanryzohm.
+## Validation
+
+The dataset has been manually assembled from multiple independent sources and visual observations.
+
+Formal validation against authoritative transportation-agency inventories is planned for selected metropolitan areas where sufficiently detailed agency data are publicly available.
+
+Validation efforts may include:
+
+- comparison between mapped locations and agency inventories;
+- random sampling of mapped locations for independent verification;
+- measurement of confirmed
